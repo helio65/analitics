@@ -25,6 +25,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure btnProcessarMouseEnter(Sender: TObject);
     procedure btnProcessarMouseLeave(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   private
     { Private declarations }
     aFactory : TFactory;
@@ -107,6 +108,11 @@ end;
 procedure TFrmMain.FormCreate(Sender: TObject);
 begin
   aFactory := TFactory.Create;
+end;
+
+procedure TFrmMain.FormDestroy(Sender: TObject);
+begin
+  FreeAndNil(aFactory);
 end;
 
 end.
