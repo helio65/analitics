@@ -41,14 +41,14 @@ object FrmMain: TFrmMain
     Left = 0
     Top = 0
     Width = 595
-    Height = 136
+    Height = 170
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitWidth = 784
+    ExplicitTop = -6
     object GroupBox1: TGroupBox
       Left = 8
-      Top = 17
+      Top = 5
       Width = 575
       Height = 49
       Caption = 'Caminho da intala'#231#227'o do Firebird'
@@ -84,7 +84,7 @@ object FrmMain: TFrmMain
     end
     object GroupBox2: TGroupBox
       Left = 8
-      Top = 72
+      Top = 60
       Width = 575
       Height = 49
       Caption = 'Base a ser analisada'
@@ -116,23 +116,69 @@ object FrmMain: TFrmMain
         OnRightButtonClick = edtCaminhoBaseRightButtonClick
       end
     end
+    object GroupBox3: TGroupBox
+      Left = 8
+      Top = 115
+      Width = 353
+      Height = 49
+      Caption = 'Analisar:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 2
+      object comboAnalisar: TComboBox
+        Left = 13
+        Top = 15
+        Width = 330
+        Height = 21
+        AutoDropDown = True
+        AutoCloseUp = True
+        Style = csDropDownList
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ItemIndex = 3
+        ParentFont = False
+        TabOrder = 0
+        Text = '-h      analyze header page ONLY'
+        Items.Strings = (
+          '-a      analyze data and index pages'
+          '-d      analyze data pages'
+          '-e      analyze database encryption'
+          '-h      analyze header page ONLY'
+          '-i      analyze index leaf pages'
+          '-s      analyze system relations in addition to user tables'
+          '-u      username'
+          '-p      password'
+          '-fetch  fetch password from file'
+          '-r      analyze average record and version length'
+          '-t      tablename <tablename2...> (case sensitive)'
+          '-role   SQL role name'
+          '-tr     use trusted authentication'
+          '-z      display version number')
+      end
+    end
   end
   object Panel2: TPanel
     Left = 0
-    Top = 136
+    Top = 170
     Width = 595
-    Height = 400
+    Height = 366
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitTop = 142
-    ExplicitWidth = 784
-    ExplicitHeight = 392
+    ExplicitTop = 136
+    ExplicitHeight = 400
     object memoResultado: TMemo
       Left = 0
       Top = 0
       Width = 595
-      Height = 400
+      Height = 366
       Align = alClient
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlue
@@ -140,10 +186,8 @@ object FrmMain: TFrmMain
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
+      ScrollBars = ssVertical
       TabOrder = 0
-      ExplicitTop = 6
-      ExplicitWidth = 723
-      ExplicitHeight = 392
     end
   end
   object ImageList1: TImageList

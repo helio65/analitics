@@ -7,6 +7,7 @@ uses
   Winapi.Messages,
   Winapi.WinInet,
   Winapi.CommCtrl,
+  Winapi.ShellAPI,
   System.SysUtils,
   System.Variants,
   System.Classes,
@@ -18,6 +19,7 @@ uses
   System.DateUtils,
   System.RegularExpressions,
   System.Win.Registry,
+  System.IOUtils,
   Vcl.Graphics,
   Vcl.Controls,
   Vcl.Forms,
@@ -39,17 +41,11 @@ type
 
   public
     function GetDirectoryApp : String;
+    function ExtractOnlyFileName(AFileName: String): String;
     procedure GetDosOutput(pCommandLine: string; pMemo : TMemo);
   end;
 
-const
-  TVIS_CHECKED  = $2000;
-  TVIS_UNCHECKED= $1000;
-
 implementation
-
-uses
-  System.IOUtils, Winapi.ShellAPI;
 
 { TFactory }
 
@@ -109,6 +105,15 @@ begin
   finally
     CloseHandle(StdOutPipeRead);
   end;
+end;
+
+function TFactory.ExtractOnlyFileName(AFileName: String): String;
+var
+    wFileName, wExt: String;
+begin
+    wExt := ExtractFileExt(AFileName);
+    wFileName := ExtractFileName(AFileName);
+    Result := StringReplace(wFileName, wExt, '', [rfReplaceAll]);
 end;
 
 end.
