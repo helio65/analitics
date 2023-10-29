@@ -1,0 +1,28 @@
+
+Database "C:\HELIO SISTEMAS\SYSAGENDA\DB\DBAGENDA.FDB"
+Gstat execution time Sat Oct 28 23:26:57 2023
+
+Database header page information:
+	Flags			0
+	Generation		21522
+	System Change Number	0
+	Page size		8192
+	ODS version		12.0
+	Oldest transaction	25744
+	Oldest active		25745
+	Oldest snapshot		25745
+	Next transaction	25745
+	Sequence number		0
+	Next attachment ID	5553
+	Implementation		HW=AMD/Intel/x64 little-endian OS=Windows CC=MSVC
+	Shadow count		0
+	Page buffers		0
+	Next header page	0
+	Database dialect	3
+	Creation date		Apr 25, 2023 23:31:21
+	Attributes		force write
+
+    Variable header data:
+	*END*
+Gstat completion time Sat Oct 28 23:26:57 2023
+
