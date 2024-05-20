@@ -11,11 +11,9 @@ object FrmMain: TFrmMain
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  PixelsPerInch = 96
   TextHeight = 13
   object btnProcessar: TSpeedButton
     Left = 0
@@ -45,7 +43,7 @@ object FrmMain: TFrmMain
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitTop = -6
+    ExplicitWidth = 587
     object GroupBox1: TGroupBox
       Left = 8
       Top = 5
@@ -172,8 +170,8 @@ object FrmMain: TFrmMain
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitTop = 136
-    ExplicitHeight = 400
+    ExplicitWidth = 587
+    ExplicitHeight = 354
     object memoResultado: TMemo
       Left = 0
       Top = 0
@@ -188,6 +186,8 @@ object FrmMain: TFrmMain
       ParentFont = False
       ScrollBars = ssVertical
       TabOrder = 0
+      ExplicitWidth = 587
+      ExplicitHeight = 354
     end
   end
   object ImageList1: TImageList

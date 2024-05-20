@@ -61,7 +61,7 @@ begin
     Exit;
   end;
 
-  wPathApp := aFactory.GetDirectoryApp;
+  wPathApp := Self.aFactory.GetDirectoryApp;
   wBat := TStringList.Create;
   memoResultado.Lines.Clear;
   try
@@ -71,16 +71,16 @@ begin
 
     wBat.SaveToFile(wPathApp + 'Analitics.bat');
 
-    aFactory.GetDosOutput('"'+ wPathApp + 'Analitics.bat"', memoResultado);
+    Self.aFactory.GetDosOutput('"'+ wPathApp + 'Analitics.bat"', memoResultado);
 
-    wNomeArquivo := aFactory.ExtractOnlyFileName(ExtractFileName(edtCaminhoBase.Text));
+    wNomeArquivo := Self.aFactory.ExtractOnlyFileName(ExtractFileName(edtCaminhoBase.Text));
 
     wNomeArquivo := wNomeArquivo + '_Estatiscas_' + DateTimeToStr(Now).Replace('/', '').Replace(':', '').Replace(' ', '') + '.log';
 
     memoResultado.Lines.SaveToFile(wPathApp+'Estatisticas_Log\' + wNomeArquivo);
 
-     wConfig := TIniFile.Create(wPathApp + 'Configuracao.ini');
-     wConfig.WriteString('Dados', 'FireDir', edtCaminhoFirebird.Text);
+     Self.wConfig := TIniFile.Create(wPathApp + 'Configuracao.ini');
+     Self.wConfig.WriteString('Dados', 'FireDir', edtCaminhoFirebird.Text);
      FreeAndNil(wConfig);
   finally
     FreeAndNil(wBat);
@@ -124,18 +124,18 @@ procedure TFrmMain.FormCreate(Sender: TObject);
 var
   wPathApp : String;
 begin
-  aFactory := TFactory.Create;
-  wPathApp := aFactory.GetDirectoryApp ;
+  Self.aFactory := TFactory.Create;
+  wPathApp := Self.aFactory.GetDirectoryApp ;
   System.SysUtils.ForceDirectories(wPathApp + 'Estatisticas_Log');
 
   if not FileExists(wPathApp + 'Configuracao.ini') then
   begin
-    wConfig := TIniFile.Create(wPathApp + 'Configuracao.ini');
-    wConfig.WriteString('Dados', 'FireDir', '');
+    Self.wConfig := TIniFile.Create(wPathApp + 'Configuracao.ini');
+    Self.wConfig.WriteString('Dados', 'FireDir', '');
     FreeAndNil(wConfig);
   end else begin
-    wConfig := TIniFile.Create(wPathApp + 'Configuracao.ini');
-    edtCaminhoFirebird.Text := wConfig.ReadString('Dados', 'FireDir', '');
+    Self.wConfig := TIniFile.Create(wPathApp + 'Configuracao.ini');
+    edtCaminhoFirebird.Text := Self.wConfig.ReadString('Dados', 'FireDir', '');
     FreeAndNil(wConfig);
   end;
 
