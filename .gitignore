@@ -3,3 +3,7 @@
 /*.res
 /Estatisticas_Log/*.log
 /*.dcu
+/*.identcache
+/*.~dsk
+/*.dproj.local
+/*.dsk
