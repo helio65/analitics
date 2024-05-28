@@ -1,3 +1,9 @@
+{ ### Aplicação para analise de estatisticas de base de dados Firebird
+  ### Analista/Desenvolvedor: Hélio Oliveira
+  ### Data: 15/05/2024
+  ### Delphi versão 10.3.3
+}
+
 unit Main;
 
 interface
